@@ -35,9 +35,6 @@ languageCode = "zh-CN"
 title = "飞雪无情的博客"
 theme = "maupassant"
 
-[author]
-  name = "飞雪无情"
-
 [params]
   author = "飞雪无情"
   subtitle = "专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构"
