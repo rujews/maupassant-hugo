@@ -31,10 +31,34 @@
 {{ template "_internal/google_analytics_async.html" . }}
 
 {{ if .Site.Params.busuanzi }}
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 {{ end }}
 
 <!-- custom js -->
 {{ range .Site.Params.customJS }}
   <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
+
+<!-- graphviz renderring -->
+{{ if .Site.Params.viz}}
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"> </script>
+	<script type="text/javascript">
+	(function(){
+		var vizPrefix = "language-viz-";
+		Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function(x){
+			var engine;
+			x.getAttribute("class").split(" ").forEach(function(cls){
+				if (cls.startsWith(vizPrefix)) {
+					engine = cls.substr(vizPrefix.length);
+				}
+			});
+			var image = new DOMParser().parseFromString(Viz(x.innerText, {format:"svg", engine:engine}), "image/svg+xml");
+			x.parentNode.insertBefore(image.documentElement, x);
+			x.style.display = 'none';
+			x.parentNode.style.backgroundColor = "white";
+			x.parentNode.style.border = "none";
+		});
+	})();
+	</script>
+{{ end }}
+
