@@ -2,8 +2,12 @@
 <style type="text/css">
     .post-toc {
         position: fixed;
-        width: 200px;
-        margin-left: -210px;
+        width:fit-content;
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        max-width: 300px;
+        min-width: 100px;
+        right: 10%;
         padding: 5px 10px;
         font-family: Athelas, STHeiti, Microsoft Yahei, serif;
         font-size: 12px;
@@ -70,11 +74,6 @@
     $(document).ready(function () {
         var postToc = $(".post-toc");
         if (postToc.length) {
-            var leftPos = $("#main").offset().left;
-            if(leftPos<220){
-                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
-            }
-
             var t = postToc.offset().top - 20,
                 a = {
                     start: {

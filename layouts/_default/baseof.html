@@ -12,7 +12,10 @@
                     {{ block "content" . }}{{ end }}
                 </div>
 
-                {{ partial "sidebar" . }}
+                {{ if hasPrefix .RelPermalink "/post/" }}
+                {{ else }}
+                    {{ partial "sidebar" . }}
+                {{ end }}
             </div>
         </div>
     </div>
