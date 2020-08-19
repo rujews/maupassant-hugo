@@ -42,6 +42,10 @@
     <script data-ad-client="{{ .Site.Params.googleAd }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {{ end }}
     
+    {{if .Site.Params.fancybox }}
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    {{ end }}
+    
     <!-- custom css -->
     {{ range .Site.Params.customCSS }}
         <link rel="stylesheet" href='{{ "/css/" | relURL }}{{ . }}'>

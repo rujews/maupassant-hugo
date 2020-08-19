@@ -37,6 +37,8 @@ Maupassant theme, ported to Hugo.
 21. 文章自定义摘要
 22. 自定义广告支持
 23. 自定义备案信息
+24. 自定义图片CDN
+25. 图片点击放大
 
 ## 下载安装
 
@@ -213,6 +215,27 @@ type: archives
 ```
 
 以上配置中的备案信息要换成自己的
+
+#### 图片点击放大
+
+将会引入jquery.js 和 fancybox 的css和js
+
+```toml
+[params]
+  fancybox = true
+```
+
+#### 图片CDN
+
+将会在mark中引入的图片src前面加上设置的host, 有http前缀的路径不会在前面加入host
+注意: 路径后面不要带/ 
+> 可直接使用jsdelivr加速 后面跟上github仓库即可 
+
+```toml
+[params.image_cdn]
+    enable = true
+    Host = "https://cdn.jsdelivr.net/gh/user/user.github.io"
+```
 
 #### Disqus
 
