@@ -4,7 +4,7 @@
     <!-- utteranc -->
     {{ if .Site.Params.utteranc.enable }}
     <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
+      <script src='{{"js/client.js" | relURL}}'
             repo= "{{ .Site.Params.utteranc.repo }}"
             issue-term="{{ .Site.Params.utteranc.issueTerm }}"
             theme="{{ .Site.Params.utteranc.theme }}"
