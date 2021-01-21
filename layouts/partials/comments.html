@@ -1,10 +1,11 @@
 {{ if and .IsPage (ne .Params.comment false) }}
-    {{ template "_internal/disqus.html" . }}
+    {{/* {{ template "_internal/disqus.html" . }} */}}
 
     <!-- utteranc -->
     {{ if .Site.Params.utteranc.enable }}
     <div class="post bg-white">
-      <script src='{{"js/client.js" | relURL}}'
+      {{/* <script src='{{"js/client.js" | relURL}}' */}}
+      <script src="https://utteranc.es/client.js"
             repo= "{{ .Site.Params.utteranc.repo }}"
             issue-term="{{ .Site.Params.utteranc.issueTerm }}"
             theme="{{ .Site.Params.utteranc.theme }}"
