@@ -118,7 +118,8 @@
     <script src='{{"js/MathJax.js" | relURL}}' async></script>
     
     {{- if .Site.Params.fancybox -}}
-        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+        {{/* <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> */}}
+        <script src='{{"js/jquery.fancybox.min.js"}}'></script>
     {{- end -}}
 {{ end }}
 
